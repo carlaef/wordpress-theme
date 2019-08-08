@@ -1,79 +1,4 @@
 <?php
-class Carla_RelatedLibraryContentWidget extends WP_Widget {
-	function __construct() {
-		$ops = array(
-			'classname' => 'carla_librarycontentwidget',
-			'description' => 'Display library content related to the page'
-		);
-		parent::__construct('carla_librarycontentwidget', 'Related Library Content', $ops);
-	}
-
-	function update($new_instance, $old_instance) {
-		$instance = array();
-		$instance['title'] = empty($new_instance['title']) ? 'Related Content' : strip_tags($new_instance['title']);
-		$instance['post_types'] = empty($new_instance['post_types']) ? array('all') : $new_instance['post_types'];
-		return $instance;
-	}
-
-	function form($instance) {
-		$title = empty($instance['title']) ? 'Related Content' : $instance['title'];
-		$types = get_post_types();
-		?>
-		<label>Title:
-		<input
-			class="widefat"
-			id="<?php echo esc_attr($this->get_field_id('title'));?>"
-			name="<?php echo esc_attr($this->get_field_name('title'));?>"
-			type="text"
-			value="<?php echo esc_attr($title);?>">
-		</label>
-		<select multiple name="<?php echo esc_attr($this->get_field_name('post_types'));?>[]">
-		<?php
-		foreach($types as $post_type):
-			if (in_array($post_type, $instance['post_types'])):
-		?>
-			<option selected value="<?php echo esc_attr($post_type);?>"><?php echo $post_type;?></option>
-		<?php
-			else:
-		?>
-			<option value="<?php echo esc_attr($post_type);?>"><?php echo $post_type;?></option>
-		<?php
-			endif;
-		endforeach;
-		?>
-		</select>
-		<?php
-	}
-
-	function widget($args, $instance) {
-		$types = empty($instance['post_types']) ? 'all' : $instance['post_types'];
-		$page_terms = get_the_terms(get_the_ID(), 'library_tag');
-		if (!$page_terms) {
-			return;
-		}
-		$terms = array();
-		foreach($page_terms as $term) {
-			$terms[] = $term->term_id;
-		}
-		$related_page_args = array(
-				'post_type' => $types,
-				'tax_query' => array(array(
-					'taxonomy' => 'library_tag',
-					'terms' => $terms
-				))
-		);
-		echo '<h2>'.$instance['title'].'</h2>';
-		$related_pages = new WP_Query($related_page_args);
-		echo '<ul>';
-		while($related_pages->have_posts()) {
-			$related_pages->the_post();
-			echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
-		}
-		echo '</ul>';
-		wp_reset_postdata();
-	}
-}
-
 function carla_post_icon($post_or_id=0) {
 	$post_type = get_post_type($post_or_id);
 	$icon = '';
@@ -97,7 +22,6 @@ function carla_sidebars() {
 		'name' => 'Library Page'
 	);
 	register_sidebar($args);
-	register_widget('Carla_RelatedLibraryContentWidget');
 }
 add_action('widgets_init', 'carla_sidebars');
 
