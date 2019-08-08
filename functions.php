@@ -70,6 +70,7 @@ class Carla_RelatedLibraryContentWidget extends WP_Widget {
 			echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 		}
 		echo '</ul>';
+		wp_reset_postdata();
 	}
 }
 

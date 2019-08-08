@@ -10,5 +10,6 @@ while ($docs->have_posts()) {
 	$docs->the_post();
 	get_template_part('partials/document_card');
 }
+wp_reset_postdata();
 ?>
 </div>

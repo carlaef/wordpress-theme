@@ -18,6 +18,7 @@ foreach($tags->terms as $term) :?>
 					<li><?php echo carla_post_icon(get_the_ID());?> <a href="<?php the_permalink();?>"><?php the_title();?></a></li>
 					<?php
 				}
+				wp_reset_postdata();
 				?>
 			</ul>
 		</div>
