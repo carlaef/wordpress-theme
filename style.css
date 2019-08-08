@@ -1,0 +1,220 @@
+/*
+ Theme Name:   CaRLA
+ Theme URI:    http://carlaef.org/
+ Description:  CaRLA Theme
+ Author:       Victoria Fierce
+ Author URI:   https://hackerbots.net/
+ Template:     Divi
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light
+ Text Domain:  carla
+*/
+
+.carla-donation-banner {
+    width: 100%;
+    background-image: linear-gradient(299deg,#382e81 0%,#181626 100%)!important;
+    padding: 2rem;
+    color: #fff;
+    margin: 1.1rem;
+}
+
+.carla-donation-banner a {
+    color: #fff;
+    font-weight: bold;
+    font-size: x-large;
+    float: left;
+}
+
+.carla-donation-banner p {
+    float: right;
+}
+
+.carla-donation-banner p.join-us {
+    background-color: #508d6e;
+    display: table-cell;
+}
+
+.carla-donation-banner p.join-us:hover {
+    background-color: #4dcb8a;
+    display: table-cell;
+}
+
+.carla-donation-banner p.join-us a {
+    margin: 0.6rem;
+}
+
+.document-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.category-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.category-card {
+	flex: 1;
+	min-width: 20rem;
+	padding: 1rem;
+	margin: 0.5rem;
+	border: 1px solid #aaa;
+}
+
+.library-tag-list {
+	font-size: x-small;
+	float: right;
+	margin-top: 1rem;
+}
+
+.library-tag-list li {
+	border: 1px solid black;
+	padding: 0.25rem;
+	margin: 0.25rem;
+	display: inline;
+}
+
+.category-contents {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.library-card {
+	flex: 1;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	background-image: linear-gradient(299deg,hsla(150, 28%, 73%, 1) 0%,hsla(150, 26%, 89%, 1) 100%)!important;
+	min-width: 20rem;
+	flex: 1;
+	color: #000!important;
+}
+
+.library-card-legal_case {
+	background-image: linear-gradient(310deg,hsla(247, 47%, 65%, 1) 0%,hsla(247, 27%, 81%, 1) 100%)!important;
+}
+
+.library-card-document {
+	background-image: linear-gradient(310deg,#eae7ff 0%,#539fdb 100%)!important;
+}
+
+.library-card .metadata {
+	border-bottom: 2px solid black;
+	padding-bottom: 1rem;
+}
+
+.category-contents article {
+		flex: 1;
+		border: 1px solid #aaa;
+		padding: 0.5rem;
+		min-width: 15rem;
+		margin: 0.5rem; 
+}
+
+.library-banner {
+	background-image: linear-gradient(293deg,#1a135e 0%,#5a3cb5 100%)!important;
+}
+
+.library-breadcrumbs li {
+	display: inline;
+}
+
+.library-breadcrumbs li:after {
+	content: "/";
+	padding: 0.2rem;
+}
+
+.library-breadcrumbs li:last-child:after {
+	content: "";
+}
+
+.library-pagination li {
+	display: inline;
+	margin: 1rem;
+}
+
+.library-pagination li a {
+	min-width: 2rem;
+	display: inline-block;
+	border-bottom: 2px solid black;
+}
+
+.library-pagination li a:hover {
+	border-bottom: 2px solid #888;
+}
+
+.library-pagination {
+	text-align: center;
+}
+
+.library-search form {
+	display: flex;
+}
+
+.library-search input {
+	flex-grow: 1;
+	margin-right: 1rem;
+}
+
+.library-search input, .library-search button {
+	font-size: large;
+}
+
+.carla-legal-case-header {
+	box-shadow: 0px 12px 16px -6px rgba(0,0,0,0.3);
+	display: flex;
+	flex-wrap: wrap;
+	background-size: cover;
+	background-position: center;
+	padding: 4rem 2rem;
+}
+
+.carla-legal-case-header .title-wrap .metadata {
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	padding: 0.75rem;
+}
+
+.carla-legal-case-header .title-wrap {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	margin: 2rem;
+	margin-top: 4rem;
+}
+
+.carla-legal-case-header h1 {
+	background-color: #382e81;
+	color: #fff;
+	padding: 0.75rem;
+	text-align: center;
+}
+
+.carla-legal-case-header .map {
+	height: 200px;
+	width: 300px;
+	background-color: #ddd;
+	margin: auto;
+}
+
+.carla-legal-case-contents {
+	display: flex;
+	padding: 2rem;
+}
+
+.carla-legal-case-contents .the-content {
+	flex-grow: 1;
+	min-width: 75%;
+}
+
+.carla-legal-case-contents .timeline h2 {
+	color: #fff!important;
+}
+
+.carla-legal-case-contents .timeline {
+	background-color: #181626;
+	padding: 2rem;
+	color: #fff;
+	height: 100%;
+}
